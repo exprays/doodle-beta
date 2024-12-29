@@ -94,22 +94,39 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 text-white">
-        <h1 className="text-4xl font-bold mb-8">Our Story Begins Soon</h1>
+      <div className="relative min-h-screen w-full overflow-hidden">
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover"
+      >
+        <source src="/videos/vietnam.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Overlay to make text more readable */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black/40" />
+
+      {/* Content */}
+      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center text-white">
+        <h1 className="text-4xl font-bold mb-8">Story Begins Soon</h1>
         <div className="grid grid-cols-4 gap-4 text-center">
-          <div className="bg-white/20 rounded-lg p-4">
+          <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4">
             <div className="text-3xl font-bold">{timeLeft.days}</div>
             <div className="text-sm">Days</div>
           </div>
-          <div className="bg-white/20 rounded-lg p-4">
+          <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4">
             <div className="text-3xl font-bold">{timeLeft.hours}</div>
             <div className="text-sm">Hours</div>
           </div>
-          <div className="bg-white/20 rounded-lg p-4">
+          <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4">
             <div className="text-3xl font-bold">{timeLeft.minutes}</div>
             <div className="text-sm">Minutes</div>
           </div>
-          <div className="bg-white/20 rounded-lg p-4">
+          <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4">
             <div className="text-3xl font-bold">{timeLeft.seconds}</div>
             <div className="text-sm">Seconds</div>
           </div>
@@ -118,6 +135,7 @@ export default function Home() {
           Until {format(targetDate, 'MMMM do, yyyy')}
         </p>
       </div>
+    </div>
     );
   }
 
