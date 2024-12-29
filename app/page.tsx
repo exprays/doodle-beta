@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { format } from 'date-fns';
 import Lenis from 'lenis';
 import { DEV_MODE } from '@/config/constants';
 import { MusicPlayer } from '@/components/MusicPlayer';
