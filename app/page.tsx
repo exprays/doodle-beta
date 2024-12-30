@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { format } from 'date-fns';
 import Lenis from 'lenis';
 import { DEV_MODE } from '@/config/constants';
-import { MusicPlayer } from '@/components/MusicPlayer';
 import Hero from '@/components/TSS/Hero';
 import About from '@/components/TSS/About';
 import Features from '@/components/TSS/Features';
@@ -93,48 +93,30 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="relative min-h-screen w-full overflow-hidden">
-      {/* Video Background */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover"
-      >
-        <source src="/videos/alright.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      {/* Overlay to make text more readable */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black/40" />
-
-      {/* Content */}
-      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center text-white px-4 md:px-8">
-        <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">Story Begins Soon</h1>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 text-center w-full max-w-4xl">
-          <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 md:p-4">
-            <div className="text-2xl md:text-3xl font-bold">{timeLeft.days}</div>
-            <div className="text-xs md:text-sm">Days</div>
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+        <h1 className="text-4xl font-bold mb-8">Our Story Begins Soon</h1>
+        <div className="grid grid-cols-4 gap-4 text-center">
+          <div className="bg-white/20 rounded-lg p-4">
+            <div className="text-3xl font-bold">{timeLeft.days}</div>
+            <div className="text-sm">Days</div>
           </div>
-          <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 md:p-4">
-            <div className="text-2xl md:text-3xl font-bold">{timeLeft.hours}</div>
-            <div className="text-xs md:text-sm">Hours</div>
+          <div className="bg-white/20 rounded-lg p-4">
+            <div className="text-3xl font-bold">{timeLeft.hours}</div>
+            <div className="text-sm">Hours</div>
           </div>
-          <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 md:p-4">
-            <div className="text-2xl md:text-3xl font-bold">{timeLeft.minutes}</div>
-            <div className="text-xs md:text-sm">Minutes</div>
+          <div className="bg-white/20 rounded-lg p-4">
+            <div className="text-3xl font-bold">{timeLeft.minutes}</div>
+            <div className="text-sm">Minutes</div>
           </div>
-          <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 md:p-4">
-            <div className="text-2xl md:text-3xl font-bold">{timeLeft.seconds}</div>
-            <div className="text-xs md:text-sm">Seconds</div>
+          <div className="bg-white/20 rounded-lg p-4">
+            <div className="text-3xl font-bold">{timeLeft.seconds}</div>
+            <div className="text-sm">Seconds</div>
           </div>
         </div>
-        <p className="mt-8 text-lg md:text-xl text-center">
-          It will be alright sudu! 🤗
+        <p className="mt-8 text-xl">
+          Until {format(targetDate, 'MMMM do, yyyy')}
         </p>
       </div>
-    </div>
     );
   }
 
@@ -146,10 +128,6 @@ export default function Home() {
         </div>
       )}
 
-      <MusicPlayer 
-        audioSource="/audio/background-music.mp3"
-        autoplay={true}
-      />
       <Hero />
       <About />
       <Features />

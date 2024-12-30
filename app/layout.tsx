@@ -1,7 +1,7 @@
-// layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import MusicWrapper from "@/provider/musicWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Doodle",
-  description: "A story for a cute cotton candy...",
+  description: "A story for someone special...",
 };
 
 export default function RootLayout({
@@ -29,6 +29,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning
       >
+        <MusicWrapper />
         {children}
       </body>
     </html>
