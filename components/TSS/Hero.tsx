@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
@@ -11,36 +11,24 @@ import VideoPreview from "./VideoPreview";
 // Register GSAP plugin
 gsap.registerPlugin(ScrollTrigger);
 
-
 const Hero: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState<number>(1);
-  const [hasClicked, setHasClicked] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
-  const [loadedVideos, setLoadedVideos] = useState<number>(0);
-
-  const totalVideos: number = 4;
-  const nextVdRef = useRef<HTMLVideoElement | null>(null);
+  const [hasClicked, setHasClicked] = useState<boolean>(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const handleVideoLoad = (): void => {
-    setLoadedVideos((prev) => prev + 1);
+    setLoading(false);
   };
-
-  useEffect(() => {
-    if (loadedVideos === totalVideos - 1) {
-      setLoading(false);
-    }
-  }, [loadedVideos]);
 
   const handleMiniVdClick = (): void => {
     setHasClicked(true);
-    setCurrentIndex((prevIndex) => (prevIndex % totalVideos) + 1);
   };
 
   useGSAP(
     () => {
-      if (hasClicked && nextVdRef.current) {
-        gsap.set("#next-video", { visibility: "visible" });
-        gsap.to("#next-video", {
+      if (hasClicked && videoRef.current) {
+        gsap.set("#main-video", { visibility: "visible" });
+        gsap.to("#main-video", {
           transformOrigin: "center center",
           scale: 1,
           width: "100%",
@@ -49,20 +37,14 @@ const Hero: React.FC = () => {
           ease: "power1.inOut",
           onStart: () => {
             (async () => {
-              await nextVdRef.current?.play();
+              await videoRef.current?.play();
             })();
           },
-        });
-        gsap.from("#current-video", {
-          transformOrigin: "center center",
-          scale: 0,
-          duration: 1.5,
-          ease: "power1.inOut",
         });
       }
     },
     {
-      dependencies: [currentIndex],
+      dependencies: [hasClicked],
       revertOnUpdate: true,
     }
   );
@@ -84,9 +66,6 @@ const Hero: React.FC = () => {
       },
     });
   });
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const getVideoSrc = (index: number): string => `/videos/hero-${index}.mp4`;
 
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden">
@@ -112,36 +91,40 @@ const Hero: React.FC = () => {
                 className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
               >
                 <video
-                  ref={nextVdRef}
-                  src={getVideoSrc((currentIndex % totalVideos) + 1)}
+                  ref={videoRef}
+                  src="/videos/hero-1.mp4"
                   loop
                   muted
-                  id="current-video"
+                  playsInline
                   className="size-64 origin-center scale-150 object-cover object-center"
                   onLoadedData={handleVideoLoad}
+                  onError={() => setLoading(false)}
                 />
               </div>
             </VideoPreview>
           </div>
 
           <video
-            ref={nextVdRef}
-            src={getVideoSrc(currentIndex)}
+            ref={videoRef}
+            src="/videos/hero-1.mp4"
             loop
             muted
-            id="next-video"
+            playsInline
+            id="main-video"
             className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
             onLoadedData={handleVideoLoad}
+            onError={() => setLoading(false)}
           />
+          
           <video
-            src={getVideoSrc(
-              currentIndex === totalVideos - 1 ? 1 : currentIndex
-            )}
+            src="/videos/hero-1.mp4"
             autoPlay
             loop
             muted
+            playsInline
             className="absolute left-0 top-0 size-full object-cover object-center"
             onLoadedData={handleVideoLoad}
+            onError={() => setLoading(false)}
           />
         </div>
 

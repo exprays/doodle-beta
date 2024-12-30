@@ -159,7 +159,7 @@ const Features: React.FC = () => (
               vacati<b>o</b>n
             </>
           }
-          description="A cross-platform metagame app, turning your activities across Web2 and Web3 games into a rewarding adventure."
+          description="Travelling with you will be the most amazing thing I will ever do."
           isComingSoon
           buttonText="Read story"
           fullStory="Our summer adventures were filled with unexpected joy and countless memories..."
@@ -176,7 +176,7 @@ const Features: React.FC = () => (
                 Lo<b>v</b>e
               </>
             }
-            description="An anime and gaming-inspired NFT collection - the IP primed for expansion."
+            description="How beautiful it is to find someone who wants nothing but your company:)"
             isComingSoon
             buttonText="Read story"
             fullStory="The journey of our love story began with a simple coffee date..."
@@ -192,7 +192,7 @@ const Features: React.FC = () => (
                 yu<b>m</b>my
               </>
             }
-            description="A gamified social hub, adding a new dimension of play to social interaction for Web3 communities."
+            description="Tere aankhone ke siwa is duniya mein aur rakha kya he?"
             isComingSoon
             buttonText="Read Story"
             fullStory="The aroma of freshly baked treats filled our special moments..."
@@ -201,17 +201,16 @@ const Features: React.FC = () => (
 
         <BentoTilt className="bento-tilt_1 md:col-span-1 md:me-0">
           <BentoCard
-            id="azul"
+            id="crazy"
             src="videos/happy.mp4"
             title={
               <>
-                az<b>u</b>l
+                cr<b>a</b>zy
               </>
             }
-            description="A cross-world AI Agent - elevating your gameplay to be more fun and productive."
+            description="When you smile, everything around me stops for a while"
             isComingSoon
-            buttonText="Chat with azul"
-            type="ai-chat"
+            buttonText="Read story"
           />
         </BentoTilt>
 
@@ -237,14 +236,14 @@ const Features: React.FC = () => (
 
         <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-2 md:row-span-2">
           <BentoCard
-            id="love"
+            id="cute"
             src="videos/alright.mp4"
             title={
               <>
                 Cu<b>t</b>e
               </>
             }
-            description="An anime and gaming-inspired NFT collection - the IP primed for expansion."
+            description="Koi no yokan - means closer to love at second sight! It is the feeling when you meet someone that you are going to fall in love with"
             isComingSoon
             buttonText="Read story"
             fullStory="The journey of our love story began with a simple coffee date..."
@@ -253,14 +252,14 @@ const Features: React.FC = () => (
 
         <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 ms-0">
           <BentoCard
-            id="yummy"
+            id="kiss"
             src="videos/kisses.mp4"
             title={
               <>
-                ki<b>s</b>s
+                Ki<b>s</b>s
               </>
             }
-            description="A gamified social hub, adding a new dimension of play to social interaction for Web3 communities."
+            description="The most intimate moments we share together are the ones that mean the most."
             isComingSoon
             buttonText="Read Story"
             fullStory="The aroma of freshly baked treats filled our special moments..."
@@ -269,14 +268,14 @@ const Features: React.FC = () => (
 
         <BentoTilt className="bento-tilt_1 row-span-1 md:row-span-2 md:col-span-1 ms-0">
           <BentoCard
-            id="yummy"
+            id="hugs"
             src="videos/hugs.mp4"
             title={
               <>
                 H<b>u</b>gs
               </>
             }
-            description="A gamified social hub, adding a new dimension of play to social interaction for Web3 communities."
+            description="Jab koi baat bigaad jaye, jab koi mushkil pad jaye..tum dena saath mera, O humnavaaa!"
             isComingSoon
             buttonText="Read Story"
             fullStory="The aroma of freshly baked treats filled our special moments..."
@@ -285,14 +284,14 @@ const Features: React.FC = () => (
 
         <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 ms-0">
           <BentoCard
-            id="yummy"
+            id="happy"
             src="videos/funplay.mp4"
             title={
               <>
                 <b>H</b>appy
               </>
             }
-            description="A gamified social hub, adding a new dimension of play to social interaction for Web3 communities."
+            description="Love meant when someone gets you more than you get yourself. The person who knows you better than you know yourself."
             isComingSoon
             buttonText="Read Story"
             fullStory="The aroma of freshly baked treats filled our special moments..."

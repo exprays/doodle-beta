@@ -4,9 +4,15 @@ import gsap from "gsap";
 import { useRef, MouseEvent } from "react";
 import Button from "./Button";
 import AnimatedTitle from "./AnimatedTitle";
+import { useRouter } from "next/navigation";
 
 const FloatingImage: React.FC = () => {
   const frameRef = useRef<HTMLVideoElement | null>(null);
+  const router = useRouter();
+
+  const onClick = () => {
+    router.push("/prologue");
+  }
 
   const handleMouseMove = (e: MouseEvent<HTMLVideoElement>): void => {
     const { clientX, clientY } = e;
@@ -102,6 +108,7 @@ const FloatingImage: React.FC = () => {
               id="realm-btn"
               title="discover prologue"
               containerClass="mt-5"
+              onClick={onClick}
             />
           </div>
         </div>
