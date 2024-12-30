@@ -1,2 +1,2 @@
 
-export const DEV_MODE = true; // Toggle this for development
+export const DEV_MODE = false; // Toggle this for development
