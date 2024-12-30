@@ -114,18 +114,9 @@ const Hero: React.FC = () => {
             className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
             onLoadedData={handleVideoLoad}
             onError={() => setLoading(false)}
+            preload="none"
           />
           
-          <video
-            src="/videos/hero-1.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute left-0 top-0 size-full object-cover object-center"
-            onLoadedData={handleVideoLoad}
-            onError={() => setLoading(false)}
-          />
         </div>
 
         <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-white">
