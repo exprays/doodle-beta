@@ -19,7 +19,7 @@ interface TimeLeft {
 }
 
 export default function Home() {
-  const targetDate = new Date('2024-12-30T09:36:00');
+  const targetDate = new Date('2024-12-30T21:40:00');
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
