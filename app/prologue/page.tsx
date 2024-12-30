@@ -24,7 +24,7 @@ export default function VideoTextPage() {
           className="h-full w-full object-cover"
           onError={(e) => console.log("Video error:", e)}
         >
-          <source src="/videos/tickling.mp4" type="video/mp4" />
+          <source src="/videos/summer.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
