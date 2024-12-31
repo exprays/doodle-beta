@@ -147,7 +147,7 @@ const Features: React.FC = () => (
         <p className="font-circular-web text-lg text-blue-50">
           Hii sudu....💗😃
         </p>
-        <GlitchText className="max-w-md font-circular-web text-lg text-blue-50 opacity-50" text="Happy new year! What a wonderful journey it have been.... from meeting randomly to being the closest ones 💗.... Life is so unpredictable isn't it? I am so happy to meet you"/>
+        <GlitchText className="max-w-md font-circular-web text-lg text-blue-50 opacity-50" text="Happy new yearrrrr! What a wonderful journey it have been.... from meeting randomly to being the closest ones 💗.... Life is so unpredictable isn't it? and I am so happy to meet you.....and you know? It is going to be longggggggg......"/>
       </div>
 
       <BentoTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">

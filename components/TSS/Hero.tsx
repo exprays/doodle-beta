@@ -139,7 +139,7 @@ const Hero: React.FC = () => {
             </h1>
 
             <p className="mb-5 max-w-64 font-robert-regular text-blue-100">
-              A Real story by puung <br /> For his beloved
+              A Real story by surya <br /> For his beloved
             </p>
 
             <Button
